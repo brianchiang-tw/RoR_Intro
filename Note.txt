@@ -327,3 +327,168 @@ a = 5; b = 7 # sometimes used, but not couraged
 # Ruby is extremely expressive
 
 # Everything is evaluated
+
+
+
+### Flow of Control
+
+## basic flow control unit
+
+# if/elsif/else
+# case 
+# until/unless ?
+# while/for 
+
+## What True and what is False ?
+
+## What in the world is === ?
+
+
+
+### Flow of control
+
+# if/unless/elsif/else
+
+# No parentheses or curly braces
+
+# Use end to close flow control block
+
+
+
+### Modifier form 
+
+# if, unless, while, until - on the same line as the statement
+
+
+
+### Ture/False
+
+# true/false judgement in Ruby
+
+# "false" and "nil object" are false
+
+# Everything else is True
+
+# Example:
+
+puts "0 is true" if 0                           # 0 is true
+puts "string false is true" if "false"          # "false" is true
+puts "boolean false is false" if false          # boolean false is false
+puts "empty string is true" if ""               # empty string is true
+puts "string nil is true" if "nil"              # string nil is true
+puts "absence of object nil is false" if nil    # absence of object nil is false
+
+
+
+### Triple Equal
+
+# Triple Equal ===
+
+# "Equal" in its own way
+# Sometimes it's not about being exactly equal, but judge the property of belonging
+
+# Example:
+
+
+
+if /sera/ === "coursera"
+    puts " regular expression /sera/ triple equlas 'coursera' "
+end
+
+
+
+if "Hello" === 'Hello'
+    puts "\"Hello\" triple equals 'Hello'"
+end
+
+
+if Integer === 66
+    puts "66 is an Integer"
+end
+
+
+if String === 'Hello'
+    puts "'Hello' is a string"
+end
+
+
+if (1..100) === 99
+    puts "99 is in the range (1..100)"
+end
+
+
+if [1, 2, 3] === 1
+    nil
+else
+    puts "We can not use triple equal to judge membership for a number over a list"
+end
+
+
+
+### Case expressions
+
+## Two flavors
+
+# 1. Similar to a series of "if" statements
+
+# 2. Specify a target next to "case" and each when "clause" is compared to target.
+
+
+
+## '===' is called the case equality operator because it is used in precisely this case.
+
+## No fall-through logic
+
+# Example:
+
+
+
+age = 20
+
+case # 1st type of case syntax
+    when age >= 18
+        puts "You can drive a car"
+    else
+        puts "Younger than minimim dirving age."
+end
+
+
+
+name = 'Fisher'
+
+case name # 2nd type of case syntax
+    when /fish/i then puts "This name include 'fish' inside."
+    when 'Smith' then puts "Your name is Smith"
+end
+
+
+
+### for Loop
+
+## Hardly used
+
+## each / times preferred
+
+
+## Comparison:
+
+# Python's range operator gives tail-exclusive interval 
+# Ruby's range operator gives tail-inclusive interval
+
+# Example:
+
+
+# 0..10 is an instance of range data type in Ruby
+for i in 0..10
+    puts i 
+end
+
+
+
+### Summary of flow control
+
+# Lots of options for flow control
+
+# Modifier form is an interesting way to be ery expressive
+
+# Non-nil and non-false values are always logic True in Ruby
