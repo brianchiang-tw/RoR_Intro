@@ -83,3 +83,54 @@
 ## getting help on any Git command
 
 # $git help <command>
+
+
+
+### Initializing a Repo
+
+## Where do I get a repo from ?
+
+# 1. Create a new repo
+
+#	$cd working_dir
+
+#	$git init
+
+#	(Possibly create a .gitignore file)
+
+# 	$git add.
+    (. Adds the entire current directory with subdirectories)
+
+#	$git commit -m "remark on the commit, ex: Initial commit"
+
+
+
+## 2. Clone an existing repo (for example from GitHub)
+
+#	$git clone https://[giturl]
+
+#	Many transfer protocol available
+
+#		https:
+#		git:
+
+
+
+### git status
+
+## git status
+
+# Provude the current status of your repo
+
+
+
+### git add
+
+## git add <file/dir>
+
+# Add untracked files to be tracked or 
+
+# Add a modified tracked file to the staging area
+
+
+
