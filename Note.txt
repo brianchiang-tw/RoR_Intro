@@ -473,7 +473,7 @@ end
 ## Comparison:
 
 # Python's range operator gives tail-exclusive interval 
-# Ruby's range operator gives tail-inclusive interval
+# Ruby's range operator x..y gives tail-inclusive interval
 
 # Example:
 
@@ -642,3 +642,58 @@ puts find_max_from_variable_length_argument("Head", 1, 88, 100, 5, "Tail")
 # We can construct methods with variable length of parameter and pass them into function
 
 # In addition, we can set default argument value in advance.
+
+
+
+### Blocks
+
+# How they are used?
+
+# How to incorporate them into our own method?
+
+
+
+### Blocks
+
+## Chunks of code
+
+# Enclosed between either curly braces {} or the keywords do and end
+
+# Passes to methods as last "parameter"
+
+## Convention
+
+# Use {} when block content is a single line
+
+# Use "do" and "end" when block content spans multiple lines
+
+## Ofter used as iterators
+
+
+
+### Coding with Blocks
+
+## Two ways to configure a block in our own method
+
+## Implicit
+
+# Use "block_given?" to see if block was passed in
+
+# Use "yield" to call the block_given
+
+
+## Explicit
+
+# Use "&" in front of the last "parameter"
+
+# Use "call" method to call the block
+
+
+
+### Summary
+
+## Blocks are just code that you can pass into methods.
+
+## When incorporating into your own methods:
+# Either use blocks implicitly
+# Or call them explicitly
