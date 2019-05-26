@@ -492,3 +492,153 @@ end
 # Modifier form is an interesting way to be ery expressive
 
 # Non-nil and non-false values are always logic True in Ruby
+
+
+
+### Functions / Methods
+
+# Definitions
+
+# How do we call them?
+
+# What and how do they return?
+
+# Default argument
+
+## How to make methods more expressive
+
+## What is "splat"
+
+
+
+### Functions and Methods
+
+## Technically, 
+a function is defined outside of a class and 
+a method is defined inside a class
+
+## In Ruby, every function/method has at least one class it belongs to
+# Not always written inside a class
+
+
+
+### Methods
+
+# Parentheses are optional both when defining and calling a method
+
+# Recommend to use for clarity
+
+
+
+### function return
+
+# No need to declare type of parameters
+
+# Can return whatever you want 
+
+# "return" keyword is optional in Ruby (last execution line of a function)
+
+# Example:
+
+def add_1( x, y)
+    (x + y)
+end
+
+
+
+def add_2( x, y)
+    return (x + y)
+end
+
+
+
+def divide( x, y)
+    return "Division by zero is not allowed" if 0 == y 
+    return (x/y)
+end
+
+puts add_1( 3, 5 )
+puts add_2( 3, 5 )
+
+puts divide( 12, 4)
+puts divide( 12, 0)
+
+
+
+### Expressive Method Names
+
+## Method name can end with
+
+# '?' - Predicate methods
+
+# '!' - Dangerous side-effect
+
+# Example:
+
+def can_divide_by?( number )
+    return false if number.zero?
+    return true
+end
+
+puts can_divide_by? 6
+
+puts can_divide_by? 0
+
+
+
+### Default arguments
+
+## Methods can have default arguments
+
+# If a value is passed in - use that passed in value
+
+# Otherwise - use the default value provided
+
+# Example:
+
+
+def factorial( n )
+    return n == 0? 1 : ( n * factorial( n-1 ) )
+end
+
+def factorial_default_arg( n = 5 )
+    return n == 0? 1 : ( n * factorial_default_arg(n-1) )
+end
+
+
+
+puts factorial 5
+puts factorial(5)
+puts factorial_default_arg(5)
+puts factorial_default_arg
+puts factorial_default_arg(3)
+
+
+
+### Splat
+
+# "*" prefix defines a variable length parameter 
+
+# can even apply to middle parameter, not just the last
+
+# Example:
+
+
+def find_max_from_variable_length_argument(first, *aSeriesOfNumber, last)
+    # variable length argument passed in, and become a array of numbers
+    return aSeriesOfNumber.max 
+end
+
+puts find_max_from_variable_length_argument("Head", 1, 88, 100, 5, "Tail")
+
+
+
+### Summary of function
+
+# There is no need to declare parameter type passed in or returned (dynamic)
+
+# "return" is optional, by Ruby definition, the last executable line is automatically "returned"
+
+# We can construct methods with variable length of parameter and pass them into function
+
+# In addition, we can set default argument value in advance.
