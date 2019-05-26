@@ -134,3 +134,98 @@
 
 
 
+### git diff
+
+
+## git diff
+# shows the difference between staging and working directory
+
+
+## git diff --staged
+# shows the changes between HEAD (last commit on current branch) and staging directory
+
+
+## git diff HEAD
+# shows the deltas between HEAD and working dir
+
+
+
+### git commit
+
+
+## git commit
+
+## commits your changes to the repo
+# Promps for a commit message in an editor
+
+## Better, just use the -m(message) option
+# $git commit -m "Your message is here"
+
+
+
+### Skipping the staging area
+
+## to skip the staging area - just use -a flag
+# After initially adding the file!!!
+
+## Either "-a", "-m", or "-am" will do the trick
+
+
+
+### Going back in time
+
+## Before committing
+
+# $git checkout .
+# Re-checkout all tracked files overwriting local changes
+
+
+
+# $git checkout -- <file>
+# Re-checkout just one specific file
+
+
+
+## After committing
+# $git revert HEAD
+# Reverts the most recent commit
+
+
+
+### Summary
+
+# You have to add a file for tracking at least once before it can make it into the repo
+
+# Can easily go back in time to a snapshot
+
+
+
+### Remote Repos and Github
+
+## $git remote add alias [remote_url]
+# Link remote repo with your local repo
+
+
+## origin - default alias for a cloned repo
+
+## $git push alias branch_name
+# Push changes to your branch or master out
+
+
+
+### Github
+
+## Web-based hosting service for software projects that use git.
+
+
+## Why use github ?
+# Community-oriented
+# Social networking functionality
+#	Feeds
+#	Followes
+#	Watching projects
+
+# Imteresting social networking graphs
+# Wiki, Issue tracking
+
+
