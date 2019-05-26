@@ -697,3 +697,21 @@ puts find_max_from_variable_length_argument("Head", 1, 88, 100, 5, "Tail")
 ## When incorporating into your own methods:
 # Either use blocks implicitly
 # Or call them explicitly
+
+
+
+### file
+
+# Reading and writing to files
+
+# exceptions
+
+# reading values from environment variable
+
+
+
+### Summary of file and exceptions
+
+# File automatically closed at the end of the block
+
+# Either use exception handling or check for existence of the file before accessing
