@@ -1,0 +1,85 @@
+### Version Control Systems
+
+## Version Control Systems (VCS)
+
+# System that keep track of change made to files
+
+# Also known as SCM (Source Code Management)
+
+
+
+### Distributed VCS
+
+## Git, Mercurial
+
+# The full repo resides locally
+
+# Contains full history
+
+# Server is almost not invloved
+
+#	Commit often and offline
+
+#	Work on the beach / train
+
+# Can push and pull between repos
+
+# Back ups -trivial and readily available	
+
+
+
+### Git basics
+
+## Only one .git directory at the top lebel (not sprinkled throughout directory structure like SVN)
+
+
+
+
+### General workflow
+
+# (empty) Create or (existing) clone repo
+
+# Add changes to staging area
+
+# Commit changes (from staging area to local repo)
+
+# Push changes from local to remote reop
+
+
+
+### Key concept
+
+# Commit locally
+
+# Push remotely
+
+
+
+### Summary
+
+# Git lets you snapshot changes to your code
+
+# Promotes committing change often
+
+
+
+### Git setup
+
+## Setup properties globally
+
+# $git config --global user.name "Super Hero"
+# $git config --global user.email my@example.com
+
+
+
+## Verify that an option has been set
+
+# $git config <option>
+
+# For example $git config user.name
+
+
+
+## getting help on any Git command
+
+# $git help <command>
