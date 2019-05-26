@@ -229,3 +229,101 @@
 # Wiki, Issue tracking
 
 
+
+
+// Push local repository into server side git
+$ git push -u origin master
+
+
+
+### Ruby: High Level Overview
+
+## Dynamic
+
+## Object-oriented
+# object-possessed, almost everything is an object
+
+## Elegant, expressive and declarative
+# Terse at times, but extremely readable
+
+## Influenced by Perl, Smalltalk, Eiffel, and LISP
+# Designed to make programmers happy
+
+
+
+### Ruby basics
+
+## 2 space indentation for each nested level is encouraged
+# Not required mandatory (unlike Python)
+
+
+
+## "#" is used for comments
+# Use comments in moderation - the code itself should tell the story
+
+
+
+## Everything is evaluated
+
+
+
+### Printing to Console
+
+## puts - standard Ruby method to print string to console (as in put string)
+
+# Add a new line after the printed string
+# Similar to System.out.println() in Java
+# Used for most of the examples
+
+## p - prints out internal representation of an object
+
+# debbuger-style output
+
+p "Got ot"
+# => Got it
+
+
+
+### Naming conventions
+
+## Variables
+# Lowercase or snake_case if multiple words
+
+## Constants
+# Either ALL_CAPS or FirstCap
+
+## Classes (and Modules)
+# CamelCase
+
+
+
+### Drop the semicolons
+
+## Leave semicolons off at the end of the file
+
+## Can cram several statements in with a semicolon in between
+# usually highy discouraged
+
+Example:
+a = 3 # semicolons not needed
+a = 5; b = 7 # sometimes used, but not couraged
+
+
+
+### IRB - Interactive Ruby
+
+## Console-based interactive Ruby interpreter
+# REPL ( Read Evaluate Print Loop )
+
+## Comes with a Ruby installation
+
+
+## Lets you experiment with quick feedback
+
+
+
+### Summary of Ruby basics
+
+# Ruby is extremely expressive
+
+# Everything is evaluated
