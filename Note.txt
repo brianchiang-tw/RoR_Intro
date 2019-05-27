@@ -274,10 +274,12 @@ $ git push -u origin master
 # Add a new line after the printed string
 # Similar to System.out.println() in Java
 # Used for most of the examples
+# "puts obj" is equivalent to "puts obj.to_s"
 
 ## p - prints out internal representation of an object
 
 # debbuger-style output
+# "p obj" is equivalent to "put obj.inspect"
 
 p "Got ot"
 # => Got it
@@ -715,3 +717,75 @@ puts find_max_from_variable_length_argument("Head", 1, 88, 100, 5, "Tail")
 # File automatically closed at the end of the block
 
 # Either use exception handling or check for existence of the file before accessing
+
+
+
+### Outline of String
+
+# Different kinds of strings supported by Ruby
+
+# Many methods supported by the String API
+
+# Symbols
+
+
+
+### String
+
+## Single-quote literal strings are very literal
+
+# Allow escaping of ' with \
+
+# Show (almost) everything else as is
+
+
+
+## Double-quoted strings
+
+# Interpret special characers like \n as newline and \t as tab width
+
+# Allow string interpolation
+
+# Support placehoder for dynamic string output on run-time
+
+
+
+### More strings
+
+## String methods ending with ! modify the existing string
+# Most other just return a new string
+
+## Can also use %Q{long multiline string}
+# Same behavior as double-quoted string
+
+
+
+### Overview of Symbols
+
+## :foo- highly optimized strings
+
+## Constant names that you don't have to predeclare
+# "Stands for something" string type
+
+
+
+### Symnols
+
+## Guaranteed to be unique and immutable
+                    ^^^^^^     ^^^^^^^^^
+
+## Can be coverted to a String with to_s
+## Similarly, it can be converted to Symbol with to_sym
+
+## Symbol can be a representation of a method name
+
+## Symbols and Strings are similar - 
+## We must determine which makes more sense to use
+
+
+
+### Summary of Symbols
+
+# Interpolation lets you finish your thought 
+
+# Strings have a lot of really useful API
