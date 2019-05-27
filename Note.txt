@@ -789,3 +789,66 @@ puts find_max_from_variable_length_argument("Head", 1, 88, 100, 5, "Tail")
 # Interpolation lets you finish your thought 
 
 # Strings have a lot of really useful API
+
+
+
+### Outline of Arrays
+
+# How they are created
+
+# How to modify Arrays
+
+# Accessing elements inside Arrays
+
+
+
+### Arrays
+
+# Collection of object references (auto-expandable)
+
+# Indexed using [] operator (method)
+
+# Can be indexed with negative numbers or ranges
+
+***
+#  Heterogeneous types allowed in the same array
+***
+
+# Can use %w{str1 str2} fpr string array creation
+
+
+
+### Modifying Arrays
+
+# Append: push or <<
+
+# Remove: pop or shift
+
+# (method)
+# Set: []=          
+
+# Randomly pull element(s) out with sample
+
+# Sort or reverse with sort! and reverse!
+
+# Recall: "!" postfix means carry out the method and modify the content itself
+
+
+
+### Useful built-in method of Arrays
+
+# each - loop through array
+
+# select - filter array by selecting 
+
+# reject - filter array by rejecting
+
+# map - modify each element in the array
+
+
+
+### Summary of array
+
+# Array API is very flexible and powerful
+
+# Lots of ways to process elements inside the array
