@@ -901,4 +901,55 @@ puts find_max_from_variable_length_argument("Head", 1, 88, 100, 5, "Tail")
 
 
 
+### Hashes
 
+## Indexed collection of object references
+
+## Created with either {} or Hash.new
+
+## Also known as associative Arrays
+
+## Index(key) can be anything
+# Not just an integer as in the case of arrays
+
+## Like the dictionary in Python
+## Like the map container in C++
+
+### Hashes
+
+# Accessed using the [] operator
+
+# Values set using
+=> (creation)
+[] (post creation)
+
+
+
+## What if you try to access a value in the Hash for which an entry does not exist?
+# nil is returned
+
+## If a Hash is created with Hash.new(0)
+# 0 is returned instead
+
+
+
+### More Hashes
+
+## As of Ruby 1.9
+
+# The order of putting things into Hash is maintained
+
+# If using symbols as keys - can use symbol: syntax
+
+## If a Hash is the last argument to a method "{}" are optional.
+Note: Last argument not inlucding a block.
+
+
+
+### Summary of Hash
+
+# Hashes are indexed collections
+
+# Usage us very similar to regular arrays
+
+# Although uncommon, it can be consied for blocks, so be careful.
