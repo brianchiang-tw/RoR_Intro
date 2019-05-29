@@ -852,3 +852,53 @@ puts find_max_from_variable_length_argument("Head", 1, 88, 100, 5, "Tail")
 # Array API is very flexible and powerful
 
 # Lots of ways to process elements inside the array
+
+
+
+### Outline of ranges
+
+# The property and syntax of .. and ...
+
+# How they are useful in Ruby
+
+
+
+### Ranges
+
+# Used to express natural consecutive sequences
+
+## 1..20, 'a' .. 'z'
+
+## Two dots -> all-inclusive
+
+# 1..10 ( 1 is included, 10 in included)
+
+## Three dots -> tail-exclusive
+
+# 1...10 ( 1 is included, 10 is excluded )
+
+## Mnemonic jingle
+
+# The more dots you have, the less you have at the end.
+
+
+
+## Efficient
+
+# Only shor and end stored
+
+## Can be converted to an array with to_a
+
+## Used for conditions and intervals
+
+
+
+### Summary of Ranges
+
+# Ranges are useful for consecutive sequences
+
+# You can convert a range to an array for more funcitonality
+
+
+
+
