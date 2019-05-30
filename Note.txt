@@ -964,7 +964,7 @@ Note: Last argument not inlucding a block.
 
 
 
-### OO Review
+### Object oriented Review
 
 # Identify things your program is dealing with
 
@@ -1055,3 +1055,75 @@ For example, when it could mean a local variable assignment.
 
 # Don't forget "self" modifier when required.
 
+
+
+### Class inheritance
+
+# The "||"(double pipe) operator
+
+# Class methods and class variables
+
+# Class inheritance
+
+
+
+### var = var || something
+
+## || operator evaluates the left side
+
+# If true - returns it
+
+# Else - returns the right side
+
+# @x = @x || 5 will return 5 the first time, and @x the next time
+
+## Short form
+
+# @x || = 5 - same as above
+
+
+
+### Class Methods and variables
+
+## Invoked on the class (as opposed to instance of class)
+# Similar to static methods in Java
+
+## Self outside of the method definition refers to the Class object
+
+
+
+### Class Method and Variables
+
+# Three ways to define class methods in Ruby
+
+# Class variables begin with @@
+
+Recall:
+# Object variables begin with @
+
+
+
+### Class Inheritance
+
+## Every class implicitly inherits from "Object"
+# "Object" itself inherits from "BasicObject"
+
+## No multiple inheritance
+# Mixins are used instead
+
+## Syntax
+class Subclass < Superclass
+    ...
+end 
+
+
+
+### Summary of class inheritance
+
+# Class inheritance lets you override parent's behavior.
+
+# Class methods do NOT need an instance of object in order to be called.
+
+# Class variables begin with @@
+
+# Object variables begin with @
