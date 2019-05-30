@@ -953,3 +953,105 @@ Note: Last argument not inlucding a block.
 # Usage us very similar to regular arrays
 
 # Although uncommon, it can be consied for blocks, so be careful.
+
+
+
+### Classes
+
+# How objects are created
+
+# How to access data within those topics
+
+
+
+### OO Review
+
+# Identify things your program is dealing with
+
+# Classes are trhings (blueprints)
+# Container of methods (behavior)
+
+# Objects are instances of those things
+
+# Object contain instance variables (state)
+
+# Instance variables (state) are like properties of an object.
+
+
+
+### Instance variables
+
+## Begin with @
+# Example: @name
+
+## Not declared
+# Spring into existence when first used.
+
+## Available to all instance methods of the class
+
+
+
+### Object creation
+
+## Classes are factories
+
+# Calling new method creates an instance of class
+# "new" causes "initialize" 
+
+# Object's state can be (should be) initialized inside the initialize method, the "constructor"
+
+
+
+### Accessing data
+
+## Instance variable are private
+# Cannot be accessed from outside the class
+
+## Methods have public access by default
+
+## To access instance variables - need to define
+# "getter" / "setter" methods
+
+## Use attr_* from instead
+# attr_accessor - getter and setter
+# attr_reader - getter only
+# attr_writer - setter only
+
+
+
+## Two problems is taken into consideration
+
+# Person is in an uninitialized state upon creation (without a name or age)
+
+# We probably want to control the maximum age assigned.
+
+
+
+## Solution
+
+# Use a constructor and a more intelligent age setter
+
+
+
+### "self" modifier
+
+# Inside instance method, self refers to the object itself.
+
+# Usually, using self for calling other methods of the same instance is extraneous.
+
+# At other times, using self is required.
+For example, when it could mean a local variable assignment.
+
+
+# Outside instance method definition, "self" refers to the class itself.
+
+
+
+### Summary
+
+# Objects are created with new
+
+# Use the short form for setting/getting data (attr_)
+
+# Don't forget "self" modifier when required.
+
