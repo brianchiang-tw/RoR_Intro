@@ -1127,3 +1127,59 @@ end
 # Class variables begin with @@
 
 # Object variables begin with @
+
+
+
+### Modules
+
+## Module as Namespaces
+
+## Module as Mixins
+
+## Using built-in Ruby modules, especially Enumerable
+
+## require_relative
+
+
+
+### Overview of Module
+
+## Container for classes, methods and Constants, or other modules
+
+## Like a Class, but cannot be instantiated
+# Class inherits from Module and adds new
+
+## Serves two main purposes:
+# 1. Namespace
+# 2. Mix-in
+
+
+
+### Module as Mixin 
+
+## Interfaces in object orient 
+# Contract - define what a class "could" do
+
+## Mixins provide a way to share (mix-in) ready code among multiple classes
+
+Note: You can include built-in modules like Enumerable that can do the hard work for you!
+
+
+
+### Enumerable Module
+
+# map, select, reject, detect etc..
+
+# Used by Array class and many other 
+
+# We can include it in our own class
+
+# Provide an implementation for each method
+
+
+
+### Summary of module 
+
+# Modules allow you to "mixin" useful coe into other classes
+
+# require_relative is useful for including other Ruby source files, relative to the current ruby code
