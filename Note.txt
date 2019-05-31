@@ -1182,4 +1182,68 @@ Note: You can include built-in modules like Enumerable that can do the hard work
 
 # Modules allow you to "mixin" useful coe into other classes
 
-# require_relative is useful for including other Ruby source files, relative to the current ruby code
+# require_relative is useful for including other Ruby source files, relative to the current ruby code.
+
+
+
+### Overview of Scope
+
+# Scope of variable
+
+# Constant
+
+# How the scope works with blocks
+
+
+
+### Scope
+
+# Methods and classes begin new scope for variables
+
+# Other scope variables do not get carried over to the inner scope
+
+# Use local_variables method to see which variables are in (and which are not in) 
+the current scope
+
+
+
+### Scope: Constants
+
+## Constant is any reference that begins with uppercase, including classes and modules.
+
+## Constants' scope rule are different than variable scope rules
+
+## Inner scope can see constants defined in outer scope, and can also override outer constants
+# Values remains unchanges outside!
+
+
+
+### Scope: Blocks
+
+## Blocks ingerit outer scope
+
+## Block is a closure
+# Remembers the context in which it was defined and uses that context whenever it is called.
+
+
+
+### Block - Local scope
+
+# Even though blocks share the outer scope - 
+a variable created inside the block is only available to the block.
+
+# Parameters to the block are always local to the block -
+even if they have the same name as variables in the outer scope
+
+# Can explicitly declare block-level variables after a semicolon in the block parameter list.
+
+
+
+### Summary of scope
+
+## Method and classes start a new scope
+
+## Constants maintain scope
+
+## Block inherit outer scope
+# coule be over-ridden
