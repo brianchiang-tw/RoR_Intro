@@ -1296,3 +1296,57 @@ and list the comma-separated methods under those levels using methos symbols.
 # public and private access controls used the most
 
 # private methods are not callable from outside or inside the class with an explicit receiver.
+
+
+
+### Overview of Unit test
+
+## Why write test?
+# How do you know that you code works?
+-> You really have no idea until you run it.
+
+## How do you refactor with confidence that you didn't break anything?
+
+## Serves as documentation for developers
+
+
+
+### Enter Test::Unit
+
+## Ruby takes testing very seriously and ships with Test::Unit
+
+## In Ruby 1.8 - Test::Unit was bloated with extra libraries that included unnecessary code
+
+## Ruby 1.9 stripped Test::Unit to a minimum
+Note: The new framework is officially called MiniTest, but it's a drop-in
+replacement, so no chages are required to Test::Unit code
+
+## Member of the XUnit family (JUnit, CppUnit)
+
+## Basic idea - extend Test::Unit::TestCase
+
+## Predix method names with test_
+
+## If one of the methods fail - others keep going (this is a good thing)
+
+## Can use setup() adn teardown() methods for setting up behavior that will execute before every test method.
+
+
+
+Note: 
+
+# "expected but was", in test report, tells you that what you thought was going to work actually isn'y working correctly.
+
+# You can run unit test every time to make sure nothing is broken, especially after makring a change.
+
+# Test can be automated as part of the build process, and have it report whether things are working or not to you.
+
+# "assert_raise" specifies the exception you expect and, in the coding block, when you expect the exception to occur.
+
+
+
+### Summary
+
+# Assertions allow you to exercise your code
+
+# Unit tests give you confidence to restructure/refactor your code.
