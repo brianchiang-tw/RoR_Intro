@@ -1413,3 +1413,35 @@ once before/after all tests.
 ### Summary of RSpec
 
 # RSpec makes testing more intuitive.
+
+
+
+### RSpec Matchers
+
+## RSpec "hangs" to and not_to methods on all outcome of expectations.
+
+## to()/not_to() methods take one parameter - a Matchers
+
+## Matcher examples:
+
+# be_true/be_false
+
+# eq constant
+
+# raise_erorr(ErrorType)
+
+
+
+### Be_predicate - boolean
+
+# If the object on which the test is operating has a predicate (boolean) method -
+you automatically get a be_predicate Matcher
+
+# So, for example be_nil is a valid matcher since every Ruby object has a :nil? method
+
+
+
+### Summary of RSpec Matchers
+
+# RSpec has a lot of built-in matchers readily available for simplifying writing tests
+
