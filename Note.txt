@@ -1247,3 +1247,52 @@ even if they have the same name as variables in the outer scope
 
 ## Block inherit outer scope
 # coule be over-ridden
+
+
+
+### Access Control
+
+# When designing your class - important to think about how much of it you will be exposing to the world
+
+# Encapsulation: try to hide internal representation of the object so you can change it later.
+
+# Three levels: public, protected, and private.
+
+
+
+### Specifying Access Control
+
+## Two ways to specify access control:
+
+# 1. Specify public, protected or private
+Everything until the next access control keyword will be of that access control level.
+
+
+
+# 2. Define the methods regularly and then specify public, private, protected access levels,
+and list the comma-separated methods under those levels using methos symbols.
+
+
+### Default setting for method
+
+# Methods in Ruby are public, by default. 
+
+
+
+### Access control
+
+## Public methods - no access control is enforced
+# Anybody can call these methods.
+
+## Protected methods - can be invoked by the object of the defining class or its subclasses
+
+## Private methods - cannot be invoked with an explicit receiver
+# Exception: setting an attribute can be invoked with an explicit receiver.
+
+
+
+### Summary
+
+# public and private access controls used the most
+
+# private methods are not callable from outside or inside the class with an explicit receiver.
