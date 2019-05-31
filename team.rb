@@ -27,7 +27,7 @@ class Team
         " #{@name} team: #{ @players.join(", ") } "
     end
 
-
+    ### key point
     def each
         @players.each { | player | yield player }
     end
