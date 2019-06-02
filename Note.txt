@@ -1445,3 +1445,95 @@ you automatically get a be_predicate Matcher
 
 # RSpec has a lot of built-in matchers readily available for simplifying writing tests
 
+
+
+### Overview of creating your first application
+# How to create and run you apply
+
+# Directory structure (CoC)
+
+# Adding static pages to your application
+
+
+
+### Creating First App 
+
+# $> rails new my_fisrt_app
+
+# rails new -h for more options
+
+
+
+### Version Control yours rails application
+
+# Rails automatically generates .gitignore
+
+# cd my_fisrt_app
+
+# git init
+
+# git add .
+
+# git commit -m "Initial commit"
+
+
+
+### Running the application
+
+## Now you have my_first_app directory with auto-generated structure/(some) code
+
+## Rails also provides a built-in web server
+
+## Time to run over application
+# (Optional) open up another terminal window / tab
+
+# Go into my_first_app directory
+
+# Run rails server (or rails s )
+
+# Prompt message in console: 
+# "Rails x.y.z application starting in development 
+# "Listening on tcp://localhost:3000"
+
+
+
+### Directory structure conventions
+
+> my_first_app
+>> app          # Controllers, Views, Models (and helpers) 
+>> bin
+>> config       # Configuration files (which DB)
+>> db           # Files related to your db and migration "scripts"
+>> lib
+>> log
+>> public       # Static files
+>> test
+>> tmp
+>> vendor
+.gitignore
+config.ru
+Gemfile         # Dependencies managed by Bundler
+Gemfile.lock    # Dependencies managed by Bundler
+Rakefile
+README.rdoc
+
+
+
+### public / hello_static.html
+
+# Serers looks into "public" directory before looking anywhere else
+
+# So... if we want to add a completely static web page to our application -
+we can add it under public directory
+
+# Open web browser with http://localhost:3000/hello_static.html to see the demo result.
+
+
+
+### Summary of Creating your first application
+
+# "rails new", in console, creates a new app
+
+# "rails server" or "rails s", in console, runs the app (need to be inside the generated dictionary)
+
+# Static pages live inside "\public" directory
