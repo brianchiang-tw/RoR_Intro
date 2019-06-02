@@ -1500,16 +1500,16 @@ you automatically get a be_predicate Matcher
 ### Directory structure conventions
 
 > my_first_app
->> app          # Controllers, Views, Models (and helpers) 
->> bin
->> config       # Configuration files (which DB)
->> db           # Files related to your db and migration "scripts"
->> lib
->> log
->> public       # Static files
->> test
->> tmp
->> vendor
+-> app          # Controllers, Views, Models (and helpers) 
+-> bin
+-> config       # Configuration files (which DB)
+-> db           # Files related to your db and migration "scripts"
+-> lib
+-> log
+-> public       # Static files
+-> test
+-> tmp
+-> vendor
 .gitignore
 config.ru
 Gemfile         # Dependencies managed by Bundler
@@ -1537,3 +1537,132 @@ we can add it under public directory
 # "rails server" or "rails s", in console, runs the app (need to be inside the generated dictionary)
 
 # Static pages live inside "\public" directory
+
+
+
+### Overview of Controller and Views
+
+# How to generate a Controller
+
+# Actions 
+
+# Embedded Ruby (ERB)
+
+
+
+### Creating a Controller
+
+## Controller contain actions (Ruby method) and orchestrate web requests
+
+## Rails can quickly generate a controller, and 0 or actions with their associated views.
+
+[rail command syntax in console]
+# rails generate controller contrller_name [action1 action2]
+
+Note: we may substitute g for generate
+
+
+
+### Generating a controller
+
+# $> rails g controller greeter hello
+
+# "greeter_controller.rb" is the controller
+
+# "greeter/hello.html.erb" is the view
+
+# Return message in console
+
+    create  app/controllers/greeter_controller.rb
+    route  get 'greeter/hello'
+    invoke  erb
+    create    app/views/greeter
+    create    app/views/greeter/hello.html.erb
+    invoke  test_unit
+    create    test/controllers/greeter_controller_test.rb
+    invoke  helper
+    create    app/helpers/greeter_helper.rb
+    invoke    test_unit
+    invoke  assets
+    invoke    coffee
+    create      app/assets/javascripts/greeter.coffee
+    invoke    scss
+    create      app/assets/stylesheets/greeter.scss
+
+
+### Generating a Controller
+
+# Directory structure by now
+
+> my_first_app
+-> app          # "app" directory is where you will be spending most of your times
+--> assets
+
+--> controllers
+---> concerns
+---> application_controller.rb
+---> greeter_controller.rb          "Controller"
+
+--> helpers
+--> mailers
+--> models 
+
+--> views
+---> greeter
+----> hello.html.erb                "View"
+---> layouts
+...
+
+
+
+### What does it look like? (View)
+
+# No <DOCTYPE>, <head> or <body> elements
+
+# Content of hello.html.erb
+
+<h1>Greeter#hello</h1>
+<p>Find me in app/views/greeter/hello.html.erb</p>
+
+
+
+### ERB (Embedded Ruby)
+
+## The view file was generated and it looks like it's an HTML file,
+but it has an .erb extension.
+
+## ERB is a templating library (similar to JSP, for example) that
+lets you embed Ruby into your HTML.
+
+## Two tag pattern to learn:
+# <% ...ruby code... %> - evaluate Ruby code
+# <%= ...ruby code ...%> - output evaluated Ruby code 
+
+
+
+### New hello.html.erb
+
+<% random_names = ["Alex", "Joe", "Michaek"] %>
+<h1>Greetings, <%= random_names.sample %> </h1>
+<p>THe time now is <%= Time.now %> </p>
+
+
+
+### What does it look like (Controller)
+
+# hello action is just a regular (empty in this case) Ruby method
+
+# What if we want to add a "goodbye" action to the greeter controller, 
+and also adds a goodbye.html.erb to app/views/greeter directory?
+
+
+
+### Summary of controller and view
+
+# Controllers contain actions (methods)
+
+# Embedded Ruby (ERB) allows you to either 
+
+evaluate expression with <% expression %>, or
+
+output an expression with <%= expression %>
