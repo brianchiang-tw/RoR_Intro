@@ -1824,3 +1824,51 @@ you cannot "store" values in the controlelr's instance variables in between requ
 # Instance variables in the controller are available to th View
 
 # Instance variables do not stick around between requests
+
+
+
+### Overview of helpers
+
+## What are helpers and why are they useful
+
+## Why use the "link_to" Rails helper
+
+## We've made the current time available through @time instance variable (controller)
+
+## But what if we want to format how the time looks?
+# Should that code go in the view? [Non-reusable]
+# Controller? [Should be "view format" agnostic ]
+
+
+
+### Helpers
+
+# (empty) greeter_helper.rb module generated
+
+# Let's add a helper method
+
+
+
+### Rails built-in helpers: link_to
+
+## Rails provides many built-in helpers
+
+## link_to name, parentheses
+# Hyperlink generator that displays the name and links to the parentheses
+
+# Path could either be regulat string or a route defined in the routes.rb 
+ending with _url(full path) or _path(relative path)
+
+Note: Instead of specifying a path, you specify a variable -
+automatically changes your page if the variable changes
+
+# _url and _path used interchangeable, but accrording to the spec,
+full path is required in case of re-direction.
+
+
+
+### Summary of helper
+
+# Helper are "macros" / "formatters" for your view
+
+# When using link_to, there is no need to change things if a path chage
