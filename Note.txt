@@ -1770,3 +1770,57 @@ greeter_goodbye GET  /greeter/goodbye(.:format) greeter#goodbye
 # Router directs the request to the right controller
 
 # "rake routes" lets us se which routes are currently defined for our application.
+
+
+
+### Overview of Moving Business Logic Out of View
+
+# How to move business logic out of View and into Controller in order to comply with the MVC pattern
+
+# How long the controller's instance variables stay in placehoder
+
+
+
+### Actions (Methods) Inside Controller 
+
+# If the action (method) is not really doing anything (i.e., empty)
+- we can remove it
+
+# As long as there is a proper route defined and there is a properly named view file/template,
+the action method does not have to be there and Rails will find the correct template by convention
+
+
+
+### Moving Business Logic Out
+
+# Our app "works", but business logic does not belong in the View.
+The View should have as little Ruby code logic as possible
+
+# Instead, let's move the logic to the controller.
+
+# Instance variables from the controller are available inside the view
+
+
+
+### Instance variables in Rails
+
+## Unlike some other web frameworks (Servlets), 
+you cannot "store" values in the controlelr's instance variables in between requests
+
+## Every new request is going to create a new instance variable
+
+## Alternative ?
+
+# Session
+
+# Database
+
+
+
+### Summary of moving business logic out of view
+
+# Keep business logic out of the view
+
+# Instance variables in the controller are available to th View
+
+# Instance variables do not stick around between requests
