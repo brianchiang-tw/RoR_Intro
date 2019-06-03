@@ -1871,4 +1871,91 @@ full path is required in case of re-direction.
 
 # Helper are "macros" / "formatters" for your view
 
-# When using link_to, there is no need to change things if a path chage
+# When using link_to, there is no need to change things if a path change
+
+
+
+### Overview of Intro to HTTParty
+
+# Ruby gems
+
+# How to use the HTTParty Ruby gem
+
+
+
+### RubyGems Package Manager
+
+# RubyGem is a shophisticated package manager for Ruby.
+
+
+
+### Install HTTParty
+
+# $> gem install httparty
+
+
+
+### More details on Gem command
+
+# $> gem list httparty -d
+
+
+
+### What are RESTful Web Services?
+
+## Simple web services implemented using HTTP (and principles of REST) that
+# 1. Have a base URI
+
+# 2. Support a data exchange format like XML or JSON (or others)
+
+# 3. Support a set of HTTP operations (GET, POST, PUT, UPDATE, DELETE, etc)
+
+
+
+### HTTParty Gem
+
+## Restful web services client
+
+## Automatic parsing of JSON and XML into RUby hashes
+
+## Provides support for 
+
+# Basic http authentication
+
+# Default request query parameters
+
+
+
+### Lots of RESTful APIs out there
+
+# Most popular APIs
+
+# Facebook, GOogleMaps, Fitbit, LinkedIn, TripAdvisor ...etc
+
+
+
+### HTTParty Usage
+
+## include HTTParty module
+# And you are good to go.
+
+## Can specify
+# base_uri for your requests
+# default_params (API developer key for example)
+# format to tell it which format the data is in
+
+
+
+### Coursera Restful API
+
+# First request parameter specified by "?", others specified by "&"
+
+# HTTParty will parse data of JSON format into Ruby hash with elements key with arrary of different elements underneath.
+
+
+
+### Summary of Introduction to HTTParty
+
+# HTTParty makes it extremely easy to ingest RESTful services, converting them to Ruby Hashes
+
+# JSON and XML formats supported.
