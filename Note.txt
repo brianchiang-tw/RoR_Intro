@@ -1959,3 +1959,8 @@ full path is required in case of re-direction.
 # HTTParty makes it extremely easy to ingest RESTful services, converting them to Ruby Hashes
 
 # JSON and XML formats supported.
+
+
+
+### Rails and HHTParty Integration
+
