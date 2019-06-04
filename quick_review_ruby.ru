@@ -647,3 +647,26 @@ puts msg
 
 ### Case ... when ... end syntax ( like Case ... switch ... in other programming language )
 
+person = ["Tom Cruise","Chiling Lin","Jay Chou"]
+
+# Pick one name from person randomly
+name = person.sample(1).to_s
+
+# Remove the square breacket[] and double quotation mark """ of name
+name = name[2..-3]
+
+# expected output:
+# a name picked from person array
+puts name
+
+#puts name.class
+case name
+    when "Tom Cruise"
+        puts 'The first leading actor of Top Gun.'
+    when "Chiling Lin"
+        puts 'The first super model in Taiwan.'
+    when "Jay Chou"
+        puts 'One of the best singer and composer in Asian pop music.'
+    else
+        puts 'Great!'
+end
