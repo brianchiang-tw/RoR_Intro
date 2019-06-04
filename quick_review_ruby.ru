@@ -529,41 +529,121 @@
 
 ## Create a Hash by constructor
 
-emoji = Hash.new
+# emoji = Hash.new
 
 # expected output
 # {}
-puts emoji.inspect
+# puts emoji.inspect
 
 # 0 is set to be the default value of non-exist key-value pair
-emoji = Hash.new(0)
+# emoji = Hash.new(0)
 
 # expected output
 # 0
-puts emoji['happy']
+# puts emoji['happy']
 
 # "Default Hash Value" is set to be the default value of non-exist key-value pair
-emoji = Hash.new("Default Hash Value")
+# emoji = Hash.new("Default Hash Value")
 
 # expected output
 # {}
-puts emoji
+# puts emoji
 
 
 # :happy's value is not created, then "Default Hash Value" is returned.
-puts emoji[:happy]
+# puts emoji[:happy]
 
 
 # Adding 2 key-value pairs as below
-emoji[:happy] = " : ) "
+# emoji[:happy] = " : ) "
 
-emoji[:shy] = " >//< "
+# emoji[:shy] = " >//< "
 
 
 # expected output
 # : ) 
-puts emoji[:happy]
+# puts emoji[:happy]
 
 # expected output
 #  >//< 
-puts emoji[:shy]
+# puts emoji[:shy]
+
+
+
+### Flow Control
+
+# expected output:
+# false
+# puts 90 > 99
+
+
+# expected output:
+# false
+# puts 90 > 99
+
+
+# expected output:
+# false
+# puts 90 >= 99
+
+
+# expected output:
+# true
+# puts 90 <= 99
+
+
+# expected output:
+# flase
+# puts 90 == 99
+
+
+# expected output:
+# true
+# puts 90 != 99
+
+
+# expected output:
+# true
+# puts true && true
+
+
+# expected output:
+# true
+# puts false && true
+
+
+
+### If ... elsif ... else ... end syntax
+
+# price = 750
+
+# if price > 1000
+#     puts "High"
+# elsif price > 250
+#     puts "medium"
+# else
+#     puts "low"
+# end
+
+
+## A concise syntax for condition judgement in one line
+temperature = 32
+overHeatWarningMessage = true
+# expected output:
+# It is hot today.
+puts "It is hot today." if temperature >= 30 && overHeatWarningMessage
+
+
+## Ternary operator of condition judgement
+# condition ? true_expression : false_expression
+
+
+temperature >= 30 && overHeatWarningMessage ? msg =  "It's hot." : msg =  "It's warm." 
+# expected output
+# It's hot.
+puts msg
+
+
+
+### Case ... when ... end syntax ( like Case ... switch ... in other programming language )
+
