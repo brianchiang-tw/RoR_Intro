@@ -627,46 +627,297 @@
 
 
 ## A concise syntax for condition judgement in one line
-temperature = 32
-overHeatWarningMessage = true
+# temperature = 32
+# overHeatWarningMessage = true
 # expected output:
 # It is hot today.
-puts "It is hot today." if temperature >= 30 && overHeatWarningMessage
+# puts "It is hot today." if temperature >= 30 && overHeatWarningMessage
 
 
 ## Ternary operator of condition judgement
 # condition ? true_expression : false_expression
 
 
-temperature >= 30 && overHeatWarningMessage ? msg =  "It's hot." : msg =  "It's warm." 
+# temperature >= 30 && overHeatWarningMessage ? msg =  "It's hot." : msg =  "It's warm." 
 # expected output
 # It's hot.
-puts msg
+# puts msg
 
 
 
 ### Case ... when ... end syntax ( like Case ... switch ... in other programming language )
 
-person = ["Tom Cruise","Chiling Lin","Jay Chou"]
+# person = ["Tom Cruise","Chiling Lin","Jay Chou"]
 
 # Pick one name from person randomly
-name = person.sample(1).to_s
+# name = person.sample(1).to_s
 
 # Remove the square breacket[] and double quotation mark """ of name
-name = name[2..-3]
+# name = name[2..-3]
 
 # expected output:
 # a name picked from person array
-puts name
+# puts name
 
 #puts name.class
-case name
-    when "Tom Cruise"
-        puts 'The first leading actor of Top Gun.'
-    when "Chiling Lin"
-        puts 'The first super model in Taiwan.'
-    when "Jay Chou"
-        puts 'One of the best singer and composer in Asian pop music.'
+# case name
+#     when "Tom Cruise"
+#         puts 'The first leading actor of Top Gun.'
+#     when "Chiling Lin"
+#         puts 'The first super model in Taiwan.'
+#     when "Jay Chou"
+#         puts 'One of the best singer and composer in Asian pop music.'
+#     else
+#         puts 'Great!'
+# end
+
+
+
+### Iteration syntax
+
+## For loop
+
+puts "#1. For loop demo: \n"
+
+# Recall:
+# head..tail, double dot operator is tail-inclusive
+# head...tail, triple dot operator is tail-exclusive 
+
+# expected output:
+# 1, 2, 3, 4, 5
+for index in 1..5
+    print index
+    if index != 5
+        print ", "
     else
-        puts 'Great!'
+        print "\n"
+    end
+
+    # loop index is auto increased in for loop with dot operator
+
 end
+
+# Note: the variable of for ... loop could be accessed outside the loop scope
+
+# expected output:
+# latest value of index: 5
+puts "latest value of index: " + index.to_s
+puts "\n\n\n"
+
+
+
+## While loop
+
+puts "#2. While loop demo: \n"
+
+# expected output:
+# 1, 2, 3, 4, 5
+
+index = 1
+while index <= 5 do
+    print index
+
+    if index != 5
+        print ", "
+    else
+        print "\n"
+        # auto exit from loop, controller by until ... condition judgement
+    end
+
+    # update loop index
+    index += 1
+end
+
+# expected output:
+# latest value of index: 6
+puts "latest value of index: " + index.to_s
+puts "\n\n\n"
+
+
+## until ... do ... end iteration
+
+puts "#3. until ... do ... end iteration demo: \n"
+
+# expected output:
+# 1, 2, 3, 4, 5
+
+index = 1
+until index > 5 do
+    print index
+
+    if index != 5
+        print ", "
+    else
+        print "\n"
+
+        # auto exit from loop, controller by until ... condition judgement
+        
+    end
+
+    # update loop index
+    index += 1
+end
+
+# expected output:
+# latest value of index: 6
+puts "latest value of index: " + index.to_s
+puts "\n\n\n"
+
+
+
+## Fixnum.times do ... end iteration
+# index is {0, 1, 2, 3, 4}, generated from 5.times
+
+puts "#4. Fixnum.times do ... end iteration demo: \n"
+
+
+# expected output:
+# 1, 2, 3, 4, 5
+
+index = 0
+5.times do | index |
+    print (index+1)
+
+    if index != 4
+        print ", "
+    else
+        print "\n"
+        
+        # auto exit from loop, controller by Fixnum.do
+    end
+
+    # loop index is auto increased in do ... end loop with Fixnum.times
+end
+
+# Note: the loop index of "Fixnum.times do ... end" cannot be accessed outside
+
+# expected output:
+# latest value of index: 0
+puts "latest value of index: " + index.to_s
+puts "\n\n\n"
+
+
+
+## loop do ... end iteration
+
+puts "#5. loop do ... end iteration demo: \n"
+
+# expected output:
+# 1, 2, 3, 4, 5
+
+index = 1
+
+loop do 
+    print index
+
+    if index != 5
+        print ", "
+    else
+        print "\n"
+
+        # We have to handle the exit point of loop do ... end iteration
+        # the break here is must-to-have to avoid infinite loops
+        break
+    end
+
+    index += 1
+end
+
+# expected output:
+# latest value of index: 5
+puts "latest value of index: " + index.to_s
+puts "\n\n\n"
+
+
+
+## lowerBonud.upto( upperBound ) do ... end iteration
+
+puts "#6. lowerBonud.upto( upperBound ) do ... end iteration demo: \n"
+
+# expected output:
+# 1, 2, 3, 4, 5
+
+index = 0
+1.upto(5) do |index|
+
+    print index
+
+    if index != 5
+        print ", "
+    else
+        print "\n"
+        # auto exit from loop, controller by upto(upperBound)
+    end
+
+    # loop index is auto increased in do ... end loop with lowerBonud.upto( upperBound )
+
+end
+
+# Note: the loop index of "lowerBonud.upto( upperBound ) do ... end" cannot be accessed outside
+
+# expected output:
+# latest value of index: 0
+puts "latest value of index: " + index.to_s
+puts "\n\n\n"
+
+
+
+## upperBound.downto( lowerBound ) do ... end iteration
+
+puts "#7. upperBound.downto( lowerBound ) do ... end iteration demo: \n"
+
+# expected output:
+# 1, 2, 3, 4, 5
+
+index = 0
+5.downto(1) do |index|
+
+    print ( (5-index)+1)
+
+    if index != 1
+        print ", "
+    else
+        print "\n"
+        # auto exit from loop, controller by downto(lowerBound)
+    end
+
+    # loop index is auto decreased in do ... end loop with upperBound.downto( lowerBound )
+
+end
+
+# Note: the loop index of "upperBonud.downto( lowerBound ) do ... end" cannot be accessed outside
+
+# expected output:
+# latest value of index: 0
+puts "latest value of index: " + index.to_s
+puts "\n\n\n"
+
+
+
+## Array.each iteration
+
+puts "#8. Array.each iteration demo: \n"
+
+# array_iteration_demo = [1, 2, 3, 4, 5]
+array_iteration_demo = [*1..5]
+
+element = -1
+array_iteration_demo.each do | element |
+    print element
+
+    if element != 5
+        print ", "
+    else
+        print "\n"
+        # auto exit from loop, controller by array.each iterator
+    end
+
+    # array.each iterator auto move forwards on every iteration
+end
+
+# Note: the iterator of "array.each do ... end" cannot be accessed outside
+
+# expected output:
+# latest value of element: -1
+puts "latest value of index: " + element.to_s
+puts "\n\n\n"
