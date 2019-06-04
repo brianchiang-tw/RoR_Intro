@@ -12,11 +12,13 @@
 # Fixnum
 # Fixnum
 # Fixnum
-# puts 5.class
-# puts -99.class
-# puts 5201314.class
-# puts 0.class
 
+=begin
+puts 5.class
+puts -99.class
+puts 5201314.class
+puts 0.class
+=end
 
 
 ### Float
@@ -26,10 +28,12 @@
 # Float
 # Float
 # Float
-# puts 12.345.class
-# puts -66.55.class
-# puts 0.0.class
 
+=begin
+puts 12.345.class
+puts -66.55.class
+puts 0.0.class
+=end
 
 
 ### String
@@ -44,69 +48,79 @@
 # String
 # String
 # String
-# puts "12345".class
-# puts '-6789'.class
-# puts '99.99'.class
-# puts "Nice to meet you".class
-# puts 'We love ruby <3'.class
-# puts 12345.to_s.class
-# puts 99.99.to_s.class
+
+=begin
+puts "12345".class
+puts '-6789'.class
+puts '99.99'.class
+puts "Nice to meet you".class
+puts 'We love ruby <3'.class
+puts 12345.to_s.class
+puts 99.99.to_s.class
+=end
 
 # String can be concatenated by using '+' operator
-# greeting = "Hello"
-# name = ", Mr./Ms. Ruby."
+greeting = "Hello"
+name = ", Mr./Ms. Ruby."
 
 # expected output:
 # Hello, Mr./Ms. Ruby
-# puts greeting + name
+=begin
+puts greeting + name
+=end
 
-# count = 1
-# sentence = ' apple a day, keeps the doctor away.'
+count = 1
+sentence = ' apple a day, keeps the doctor away.'
 
 # expeceted output:
 # 1 apple a day, keeps the doctor away.
-# puts 1.to_s + sentence
 
+=begin
+# puts 1.to_s + sentence
+=end
 
 ## Practical built-in function on String
-# text = 'Dog'
+text = 'Dog'
 
+=begin
 # expected output:
 # Dog
-# puts text
+puts text
 
 # expected output:
 # goD
-# puts text.reverse
+puts text.reverse
 
 # expected output:
 # 3
-# puts text.length
+puts text.length
 
 # expected output:
 # DOG
-# puts text.upcase
+puts text.upcase
 
 # expected output:
 # dog
-# puts text.downcase
-
+puts text.downcase
+=end
 
 ## Place holder #{placeHolderName} is also supportd on String with double quotation mark
-# action = "study"
+action = "study"
 
-# place = "library"
+place = "library"
 
+=begin
 # expected output:
 # We study at the library.
-# puts "We #{action} at the #{place}."
+puts "We #{action} at the #{place}."
 
 
 ## Note: String enclosed with single quotation mark is output as raw content
 
 # expected output:
 # We #{action} at the #{place}.
-# puts 'We #{action} at the #{place}.'
+puts 'We #{action} at the #{place}.'
+=end
 
 
 
@@ -675,6 +689,8 @@
 
 ### Iteration syntax
 
+=begin
+
 ## For loop
 
 puts "#1. For loop demo: \n"
@@ -921,3 +937,5 @@ end
 # latest value of element: -1
 puts "latest value of index: " + element.to_s
 puts "\n\n\n"
+
+=end
