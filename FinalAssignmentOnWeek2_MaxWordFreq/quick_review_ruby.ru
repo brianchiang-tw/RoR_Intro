@@ -341,3 +341,51 @@ puts text.class
 # expected output
 # Symbol
 puts :a_demo_for_ruby_symbol.class
+
+
+
+### Array
+
+# Mixure of elements with differnt type is allowed
+
+# expected output:
+# 0
+# 1.23
+# 3
+# four
+demo_array = [0, 1.23, "3", :four]
+puts demo_array
+
+
+## Note: 
+# '.inspect' gives a more intuitive description on output
+
+# expected output:
+# [0, 1.23, "3", :four]
+puts demo_array.inspect
+
+
+# Create an empty array with [] operator
+color_array_1 = []
+
+# expected output:
+# []
+puts color_array_1.inspect
+
+
+# Create an empty array with Array's constructor
+color_array_2 = Array.new
+
+# expected output:
+# []
+puts color_array_2.inspect
+
+
+# Create an array with Array's constructor, given array length and default value
+array_length = 5
+array_default_element_value = 9
+color_array_3 = Array.new(array_length, array_default_element_value)
+
+# expected output:
+# [9, 9, 9, 9, 9]
+puts color_array_3.inspect
