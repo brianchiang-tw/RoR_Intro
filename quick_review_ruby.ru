@@ -366,26 +366,62 @@ puts demo_array.inspect
 
 
 # Create an empty array with [] operator
-color_array_1 = []
+array_1 = []
 
 # expected output:
 # []
-puts color_array_1.inspect
+puts array_1.inspect
 
 
 # Create an empty array with Array's constructor
-color_array_2 = Array.new
+array_2 = Array.new
 
 # expected output:
 # []
-puts color_array_2.inspect
+puts array_2.inspect
 
 
 # Create an array with Array's constructor, given array length and default value
 array_length = 5
 array_default_element_value = 9
-color_array_3 = Array.new(array_length, array_default_element_value)
+array_3 = Array.new(array_length, array_default_element_value)
 
 # expected output:
 # [9, 9, 9, 9, 9]
-puts color_array_3.inspect
+puts array_3.inspect
+
+
+# Create an array with double dot .. range operator
+array_4 = [*1..5]
+
+# expected output
+# [1, 2, 3, 4, 5]
+puts array_4.inspect
+
+
+# Create an array with triple dot ... range operator (tail-exclusive)
+array_5 = [*6...11]
+
+# expected output
+# [6, 7, 8, 9, 10]
+puts array_5.inspect
+
+# Remember to add a * to generate an array from double dot or triple dot operator
+array_mistake_1 = [1..5]
+
+# output:
+[1..5]
+puts array_mistake_1.inspect
+
+array_mistake_2 = [6...10]
+# output:
+# [6...10]
+puts array_mistake_2.inspect
+
+# Create an array with given mathematical formula
+# f(x) = 2*x + 1
+array_6 = Array.new(5) { |index| index*2 + 1 }
+
+# expected output:
+# [1, 3, 5, 7, 9]
+puts array_6.inspect
