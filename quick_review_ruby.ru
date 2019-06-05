@@ -1092,10 +1092,11 @@ puts hash_obj_1 == hash_obj_2
 
 ### Definition of a class
 
-class Actor
+class Pilot
 
     attr_reader :first_name, :last_name
 
+    # Object Constructor
     def initialize( firstName, lastName)
         @fisrt_name = firstName
         @last_name = lastName
@@ -1103,12 +1104,14 @@ class Actor
         ObjectSpace.define_finalizer( self, self.class.finalize() )
     end
 
+    # Object Method
     def introduce
         introduction = "Hi everyone. My name is #{@fisrt_name} #{@last_name}."
         puts introduction
         return
     end
 
+    # Class object destructor
     def self.finalize()
         proc{
             farewell = "Hey I got to go for combat training. See you."
@@ -1124,7 +1127,7 @@ end
 # F-14 is reall cool!!!
 # Hey I got to go for combat training. See you.
 
-actor_1 = Actor.new("Tom", "Cruise")
+actor_1 = Pilot.new("Tom", "Cruise")
 
 actor_1.introduce
 
