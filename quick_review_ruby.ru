@@ -1094,6 +1094,15 @@ puts hash_obj_1 == hash_obj_2
 
 class Pilot
 
+    # We can run a piece of code in class
+    cheer = "We control the skies! <3"
+    
+    puts cheer
+
+    # Class Method for access control on attribute
+    # 1. attr_accessor for getter and setter
+    # 2. attr_reader for getter only
+    # 3. attr_writer for setter only
     attr_reader :first_name, :last_name, :name
 
     # Object Constructor
@@ -1111,6 +1120,8 @@ class Pilot
         introduction = "Hi everyone. My name is #{@name}."
 
         puts introduction
+        puts "F-14 is reall cool!!!"
+
         return
     end
 
@@ -1127,23 +1138,37 @@ class Pilot
 end
 
 # expected output in order:
-# Hi everyone. My name is Tom Cruise.
-# F-14 is reall cool!!!
-# Hey I got to go for combat training. See you.
 
+
+# We control the skies! <3
 actor_1 = Pilot.new("Tom", "Cruise")
 
+# Hi everyone. My name is Tom Cruise.
+# F-14 is reall cool!!!
 actor_1.introduce
 
-puts "F-14 is reall cool!!!"
+
 
 # Note: Ruby will auto start GC to recycle unused object in background
 actor_1 = nil
 
 actor_2 = Pilot.new("Pete", "Mitchell")
 
+# Hi everyone. My name is Pete Mitchell.
+# F-14 is reall cool!!!
+actor_2.introduce
+
+# Pete Mitchell
 puts actor_2.name
+
+# Auto execution of finalize after object being recycled
+# (from Pete Mitchell) Hey I got to go for combat training. See you.
+# (from Tom Cruise) Hey I got to go for combat training. See you.
+
 
 # Because we set attr_reader for name, thus it is read-only
 # undefined method `name=' for #<Pilot:0x2e4cfb8> (NoMethodError)
 # actor_2.name = "Maria Sharapova"
+
+
+##
