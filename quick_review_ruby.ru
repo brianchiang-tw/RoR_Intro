@@ -1094,27 +1094,31 @@ puts hash_obj_1 == hash_obj_2
 
 class Pilot
 
-    attr_reader :first_name, :last_name
+    attr_reader :first_name, :last_name, :name
 
     # Object Constructor
     def initialize( firstName, lastName)
         @fisrt_name = firstName
         @last_name = lastName
+        @name = "#{firstName} #{lastName}".to_s
 
-        ObjectSpace.define_finalizer( self, self.class.finalize() )
+        ObjectSpace.define_finalizer( self, finalize() )
     end
 
     # Object Method
     def introduce
-        introduction = "Hi everyone. My name is #{@fisrt_name} #{@last_name}."
+        #introduction = "Hi everyone. My name is #{@fisrt_name} #{@last_name}."
+        introduction = "Hi everyone. My name is #{@name}."
+
         puts introduction
         return
     end
 
     # Class object destructor
-    def self.finalize()
+    #def self.finalize()
+    def finalize( p = @name)
         proc{
-            farewell = "Hey I got to go for combat training. See you."
+            farewell = "(from #{p}) Hey I got to go for combat training. See you."
             puts farewell
             return
         } 
@@ -1136,4 +1140,10 @@ puts "F-14 is reall cool!!!"
 # Note: Ruby will auto start GC to recycle unused object in background
 actor_1 = nil
 
+actor_2 = Pilot.new("Pete", "Mitchell")
 
+puts actor_2.name
+
+# Because we set attr_reader for name, thus it is read-only
+# undefined method `name=' for #<Pilot:0x2e4cfb8> (NoMethodError)
+# actor_2.name = "Maria Sharapova"
