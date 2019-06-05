@@ -1171,4 +1171,32 @@ puts actor_2.name
 # actor_2.name = "Maria Sharapova"
 
 
-##
+
+### Method encapsulation in Class
+
+class Fighter_aircraft
+    
+    #public, is default setting in Ruby
+    def radio_check
+        puts "Radio check complete."
+    end
+
+    #protected
+    protected
+    def wing_plane_signal
+        puts "Sending wing place signal..."
+    end
+
+    #private
+    private
+    def track_enemy
+        puts "Tracking enemy..."
+    end
+
+    def lock_on_enemy
+        puts "Locking on target"
+    end
+
+
+end
+# End of definition of class Fighter_aircraft
