@@ -943,3 +943,194 @@ puts "\n\n\n"
 
 
 ### Regular expressions
+
+=begin
+
+phoneNumber = "0912-345-678"
+
+serviceProvider = nil
+middleNumber = nil
+tailNumber = nil
+
+regex = /(\d{4})-(\d{3})-(\d{3})/
+                  
+if phoneNumber =~ regex
+    serviceProvider = $1
+    middleNumber = $2
+    tailNumber = $3
+end
+
+# expected output:
+# 0912
+puts serviceProvider
+
+# expected output:
+# 345
+puts middleNumber
+
+# expected output:
+# 678
+puts tailNumber
+
+=end
+
+
+### Method definition
+
+=begin
+
+def greeting_1( name )
+    sentence = "Nice to meet you, " + name + "."
+    return sentence
+end
+
+# Nice to meet you, Tom.
+puts greeting_1("Tom")
+
+# Note the parenthesis could be skipped
+
+# Nice to meet you, Joe.
+puts greeting_1 "Joe"
+
+## We can set default value in paramter list of a method/function
+def greeting_2( name="Mandy" )
+    sentence =  "Hi, " + name + "."
+    return sentence
+end
+
+# Hi, Mandy.
+puts greeting_2
+
+=end
+
+
+### Special postfix ending mark of Ruby method
+
+## Methods ending in ! perform some permanent change or potentially risky change
+
+# Example of postfix ! 
+
+# arrayObj.sort returns a new object with sorted array
+# arrayObj.sort! sorts itself in-place.
+
+# Kernel::exit causes a script to exit.
+# Kernel::exit! does so right away, and bypassing any exit handlers
+
+
+
+## Method ending in ? return a boolean with corresponding condition judgement
+
+# Example of postfix ?
+
+# flag = x.zero? <==> flag = true if x == 0, or flag = false if x != 0
+
+=begin
+
+array_demo_postfix_mark = [5, 1, 4, 2, 3]
+
+# false
+puts array_demo_postfix_mark.empty?
+
+# [1, 2, 3, 4, 5]
+puts array_demo_postfix_mark.sort.inspect
+
+# Keep the same
+# [5, 1, 4, 2, 3]
+puts array_demo_postfix_mark.inspect
+
+
+
+# [1, 2, 3, 4, 5]
+puts array_demo_postfix_mark.sort!.inspect
+
+# The sort! carries out a in-place sorting by itself
+# [1, 2, 3, 4, 5]
+puts array_demo_postfix_mark.inspect
+
+=end
+
+
+### Object orientation 
+
+# Object-oriented programming (OOP) is a programming paradigm 
+# based on the concept of "objects", which can contain data, 
+# in the form of fields (often known as attributes), and code, 
+# in the form of procedures (often known as methods). 
+
+# A feature of objects is an object's procedures that can access 
+# and often modify the data fields of the object with 
+# which they are associated (objects have a notion of "this" or "self").
+
+
+## Recall: Ruby is a programming language with full object-orientation
+
+=begin
+
+## Object creation
+
+string_obj_1 = String.new
+string_obj_2 = ""
+
+# true
+puts string_obj_1 == string_obj_2
+
+
+array_obj_1 = Array.new
+array_obj_2 = []
+
+# true
+puts array_obj_1 == array_obj_2
+
+hash_obj_1 = Hash.new
+hash_obj_2 = {}
+
+# true
+puts hash_obj_1 == hash_obj_2
+
+=end
+
+
+### Definition of a class
+
+class Actor
+
+    attr_reader :first_name, :last_name
+
+    def initialize( firstName, lastName)
+        @fisrt_name = firstName
+        @last_name = lastName
+
+        ObjectSpace.define_finalizer( self, self.class.finalize() )
+    end
+
+    def introduce
+        introduction = "Hi everyone. My name is #{@fisrt_name} #{@last_name}."
+        puts introduction
+        return
+    end
+
+    def self.finalize()
+        proc{
+            farewell = "Hey I got to go for combat training. See you."
+            puts farewell
+            return
+        } 
+    end
+
+end
+
+# expected output in order:
+# Hi everyone. My name is Tom Cruise.
+# F-14 is reall cool!!!
+# Hey I got to go for combat training. See you.
+
+actor_1 = Actor.new("Tom", "Cruise")
+
+actor_1.introduce
+
+puts "F-14 is reall cool!!!"
+
+# Note: Ruby will auto start GC to recycle unused object in background
+actor_1 = nil
+
+
