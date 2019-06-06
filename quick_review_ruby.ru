@@ -1466,6 +1466,11 @@ puts sentence_demo.inspect
 
 =end
 
+
+
+=begin
+
+
 number_array_one_to_ten = [*1..10]
 
 # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -1482,6 +1487,15 @@ puts odd_number_output_array.inspect
 # [7, 8, 9, 10]
 filtered_numbet_output_array = number_array_one_to_ten.find_all { |num| num > 6} 
 puts filtered_numbet_output_array.inspect
+
+
+
+=end
+
+# =====================================
+
+=begin
+
 
 
 ## <=> Spaceship comparison operator
@@ -1519,6 +1533,20 @@ b = "5"
 # nil
 p a <=> b
 
+
+
+=end
+
+
+
+# =====================================
+
+
+
+=begin
+
+number_array_one_to_ten = [*1..10]
+
 # Shuffle a array to make it of random order
 number_array_one_to_ten_shuffle = number_array_one_to_ten.shuffle
 
@@ -1548,7 +1576,21 @@ puts number_array_one_to_ten_sort_ascending.reverse.inspect
 
 
 
-## Summation, injection as well as reduction
+=end
+
+
+
+# =====================================
+
+
+
+=begin
+
+## Arithmetic and logic operation with injection as well as map and reduce
+
+number_array_one_to_ten = [*1..10]
+
+
 
 # 55
 sum_by_method_1 = number_array_one_to_ten.inject(0){ |sum, element | sum + element }
@@ -1573,3 +1615,186 @@ puts sum_by_method_5
 # 55
 sum_by_method_6 = number_array_one_to_ten.reduce(:+)
 puts sum_by_method_6
+
+
+## A string array from "1" to "10"
+string_array_one_to_ten = Array.new
+1.upto(10) do | index |
+    string_array_one_to_ten << (index).to_s
+end
+
+# 55
+sum_by_method_7 = string_array_one_to_ten.map(&:to_i).reduce(0, :+)
+puts sum_by_method_7
+
+
+
+## String operation with "condition ? expr_on_true : expr_on_false" syntax
+
+ranger_quote_array = ["Army's elite", "Always prepared", "Ready for action", "Special forces here", "On the go"]
+
+longest_quote = ranger_quote_array.inject do | quote_a, quote_b |
+
+    ( quote_a.length >= quote_b.length ) ? quote_a : quote_b
+
+end
+
+
+# "Special forces here"
+puts longest_quote.inspect
+
+
+
+=end
+
+
+
+# =====================================
+
+
+
+=begin
+
+### One-time execution, demo on file closing
+
+fileName="Note.txt"
+fileAttribute = "r"
+
+## Manual file closing by calling fileHandle.close
+fileHandle = File.new(fileName, fileAttribute)
+
+# get one line from file handle
+line = fileHandle.gets
+
+# print one line to console
+
+# expected output(the first line of Note.txt):
+# ### Version Control Systems
+puts line
+
+fileHandle.close
+
+
+## Auto file closing by using do ... end code block
+File.open(fileName, fileAttribute) do | fileHandle |
+
+    # get one line from file handle
+    line = fileHandle.gets
+
+    # print one line to console
+
+    # expected output(the first line of Note.txt):
+    # ### Version Control Systems
+    puts line
+
+
+    
+end
+#FileHandle is auto closed after do | fileHandle | ... end code block.
+
+
+=end
+
+
+
+# =====================================
+
+
+
+### Clode block and yield
+
+
+## implicit parameter with yield
+
+def demo_function_implicitYieldParam
+    puts "Hi"
+
+    # invoke parameter which is passed in
+    yield
+
+    puts "Bye"
+end
+
+# expected output:
+# Hi
+# Use yield to invoke code block, which is passed in as parameter
+# Bye
+demo_function_implicitYieldParam { puts "Use yield to invoke code block, which is passed in as parameter"}
+
+
+
+## explicit parameter with param.call
+
+def demo_function_explicitCallParam(&param)
+    puts "Hello"
+
+    # invoke parameter which is passed in 
+    param.call
+    puts "See you"
+end
+
+# expected output:
+# Hello
+# Using param.call to invoke is more intuitive.
+# See you
+demo_function_explicitCallParam { puts "Using param.call to invoke is more intuitive." }
+
+
+
+## implicit yield with parameter list of code block
+def demo_function_implicitYield_paramList_of_codeBlock
+
+    # invoke parameter which is passed in
+    yield("Tom Cruise")
+
+end
+
+# expected output:
+# Tom Cruise, how was last flight?
+demo_function_implicitYield_paramList_of_codeBlock{ |name|
+    puts "#{name}, how was last flight?"
+}
+
+
+
+## explicit call with parameter list of code block
+def demo_function_explicitCall_paramList_of_codeBlock(&param)
+
+    # invoke parameter which is passed in
+    param.call("Tom Cruise")
+
+end
+
+# expected output:
+# Tom Cruise, how was last flight?
+demo_function_explicitCall_paramList_of_codeBlock{ |name|
+    puts "#{name}, how was last flight?"
+}
+
+
+
+## Transfrom and view code block as an object(with computation capability)
+def function_explicit_call_codeBlock(&code_block_obj)
+    code_block_obj.call("Tom Cruise","F-14")
+end
+
+# Tom Cruise loves F-14! 
+function_explicit_call_codeBlock { | param_a, param_b | puts "#{param_a} loves #{param_b}! " }
+
+## Other relarive variant
+
+# Tom Cruise loves F-14! 
+proc_1 = Proc.new { | param_a, param_b | puts "#{param_a} loves #{param_b}! " } 
+function_explicit_call_codeBlock( &proc_1 )
+
+
+
+# Tom Cruise loves F-14! 
+proc_2 = lambda { | param_a, param_b | puts "#{param_a} loves #{param_b}! " }
+function_explicit_call_codeBlock( &proc_2 )
+
+
+
+# Tom Cruise loves F-14! 
+proc_3 = -> ( param_a, param_b){ puts "#{param_a} loves #{param_b}! " }
+function_explicit_call_codeBlock( &proc_3 )
