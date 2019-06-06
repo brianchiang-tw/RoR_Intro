@@ -1704,6 +1704,8 @@ end
 ### Clode block and yield
 
 
+=begin
+
 ## implicit parameter with yield
 
 def demo_function_implicitYieldParam
@@ -1798,3 +1800,57 @@ function_explicit_call_codeBlock( &proc_2 )
 # Tom Cruise loves F-14! 
 proc_3 = -> ( param_a, param_b){ puts "#{param_a} loves #{param_b}! " }
 function_explicit_call_codeBlock( &proc_3 )
+
+
+
+=end
+
+
+###  Parameter list with variable length
+
+
+
+=begin
+
+
+def func_of_varaible_length_paramList( *paramList )
+    return paramList.inject(0){ |sum, element| sum + element }
+end
+
+# 15
+puts func_of_varaible_length_paramList(1, 2, 3, 4, 5)
+
+
+=end
+
+
+
+### Exception Handle
+
+def fun_demo_exception_handle
+    begin
+        puts 2/0
+    rescue => error
+        puts error.inspect
+    ensure
+        puts "Ending handler no matter it is passed or failed with exception"
+    end
+end
+
+# expected output:
+# #<ZeroDivisionError: divided by 0>
+# Ending handler no matter it is passed or failed with exception
+fun_demo_exception_handle
+
+
+## user defined exception and manual exception raise (like "throw" in C++ and Java) 
+
+class Demo_excpetion < RuntimeError
+    puts "A demo excpetion is raised manually."
+end
+
+
+
+# expected output:
+# A demo excpetion is raised manually.
+raise Demo_excpetion
