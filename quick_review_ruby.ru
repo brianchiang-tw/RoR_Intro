@@ -1378,6 +1378,8 @@ Pilot_3.who_am_i
 
 # Iterators return all the elements of a collection
 
+=begin
+
 array_pilot = ["Pete Mitchell", "Charlotte Blackwoord", "Nick Bradshaw", "Mike Metcalf", "Tom Kazansky"]
 
 
@@ -1403,8 +1405,46 @@ end
 
 array_hurray = ["Air Force here.", "We control the skies.", "I'm listening.", "Let's given them an air show.", "We're cruising.", "Got you covered.", "I see 'em, radar tracking is ready.", "Roger taht.", "This is our territory.", "Laser guided missile is good to go.", "On patrol."]
 
-# Advanced usage with both element and index
+# Advanced usage with both element and index by ".each_with_index" syntax
+
 array_pilot.each_with_index do | pilot, index |
     
     puts "# #{index+1}, #{pilot} : #{ array_hurray.sample(1) }"
+
 end
+
+
+
+=end
+
+
+
+### Code block
+
+# do...end is recommended for multi-ine
+
+# { ... } in recommended for single line
+
+
+
+# expected output:
+# Code block demo with curly brace
+# Code block demo with curly brace
+
+=begin
+2.times { puts "Code block demo with curly brace"}
+=end
+
+
+# expected output:
+# Code block demo
+# with do...end
+# Code block demo
+# with do...end
+
+=begin
+2.times do
+    puts "Code block demo"
+    puts "with do...end"
+end
+=end
