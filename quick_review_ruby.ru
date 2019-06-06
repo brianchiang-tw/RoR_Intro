@@ -1448,3 +1448,128 @@ end
     puts "with do...end"
 end
 =end
+
+
+
+### Mixture of built-in function, code block, and iterators
+
+=begin
+
+ranger_quote_array = ["Army's elite", "Always prepared", "Ready for action", "Special forces here", "On the go"]
+
+sentence_demo = ranger_quote_array.map { |quote| quote+"!" }
+
+# expected output:
+# ["Army's elite!", "Always prepared!", "Ready for action!", "Special forces here!", "On the go!"]
+
+puts sentence_demo.inspect
+
+=end
+
+number_array_one_to_ten = [*1..10]
+
+# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+puts number_array_one_to_ten.inspect
+
+# [2, 4, 6, 8, 10]
+even_number_output_array = number_array_one_to_ten.find_all { |num| num % 2 == 0 }
+puts even_number_output_array.inspect
+
+# [1, 3, 5, 7, 9]
+odd_number_output_array = number_array_one_to_ten.find_all { |num| num % 2 == 1 }
+puts odd_number_output_array.inspect
+
+# [7, 8, 9, 10]
+filtered_numbet_output_array = number_array_one_to_ten.find_all { |num| num > 6} 
+puts filtered_numbet_output_array.inspect
+
+
+## <=> Spaceship comparison operator
+
+# a <=> b :=
+#   if a < b then return -1
+#   if a = b then return  0
+#   if a > b then return  1
+#   if a and b are not comparable then return nil
+
+a = 5
+b = 3
+# 1
+puts a <=> b
+
+
+
+a = 5
+b = 5
+# 0
+puts a <=> b
+
+
+
+a = 5
+b = 7
+# -1
+puts a <=> b
+
+
+
+a = 5
+b = "5"
+
+# nil
+p a <=> b
+
+# Shuffle a array to make it of random order
+number_array_one_to_ten_shuffle = number_array_one_to_ten.shuffle
+
+
+
+# an array, element range is  from 1 to 10, with random sequence
+# [8, 5, 1, 10, 4, 7, 6, 3, 9, 2]
+puts number_array_one_to_ten_shuffle.inspect
+
+
+
+# sort with <=> spaceship comparison operator, with ascenging order
+# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+number_array_one_to_ten_sort_ascending = number_array_one_to_ten_shuffle.sort { |a, b| a <=> b }
+puts number_array_one_to_ten_sort_ascending.inspect
+
+
+
+# sort with <=> spaceship comparison operator, with descending order
+# [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+number_array_one_to_ten_sort_descending = number_array_one_to_ten_shuffle.sort { |a, b| b <=> a }
+puts number_array_one_to_ten_sort_descending.inspect
+
+# Leveraging .reverse of ascending result to get a descending one also works well.
+# [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+puts number_array_one_to_ten_sort_ascending.reverse.inspect
+
+
+
+## Summation, injection as well as reduction
+
+# 55
+sum_by_method_1 = number_array_one_to_ten.inject(0){ |sum, element | sum + element }
+puts sum_by_method_1
+
+# 55
+sum_by_method_2 = number_array_one_to_ten.inject{ | sum, element | sum + element }
+puts sum_by_method_2
+
+# 55
+sum_by_method_3 = number_array_one_to_ten.inject(0, :+)
+puts sum_by_method_3
+
+# 55
+sum_by_method_4 = number_array_one_to_ten.inject(:+)
+puts sum_by_method_4
+
+# 55
+sum_by_method_5 = number_array_one_to_ten.reduce(0, :+)
+puts sum_by_method_5
+
+# 55
+sum_by_method_6 = number_array_one_to_ten.reduce(:+)
+puts sum_by_method_6
