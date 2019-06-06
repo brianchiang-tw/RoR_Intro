@@ -1827,6 +1827,10 @@ puts func_of_varaible_length_paramList(1, 2, 3, 4, 5)
 
 ### Exception Handle
 
+
+=begin
+
+
 def fun_demo_exception_handle
     begin
         puts 2/0
@@ -1854,3 +1858,25 @@ end
 # expected output:
 # A demo excpetion is raised manually.
 raise Demo_excpetion
+
+
+
+=end
+
+
+### Useful convention on value assignment
+
+demo_var = nil
+
+demo_var ||= "default value"
+
+# is equal to 
+
+# demo_var || ( demo_var = "default value" )
+
+# Purpose:
+# To assign a default value to a variable if it is nil or false
+
+# expected output
+# default value
+puts demo_var
