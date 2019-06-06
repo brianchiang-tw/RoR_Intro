@@ -1092,6 +1092,8 @@ puts hash_obj_1 == hash_obj_2
 
 ### Definition of a class
 
+=begin
+
 class Pilot
 
     # We can run a piece of code in class
@@ -1136,6 +1138,7 @@ class Pilot
     end
 
 end
+#End of definition of class Pilot
 
 # expected output in order:
 
@@ -1200,3 +1203,208 @@ class Fighter_aircraft
 
 end
 # End of definition of class Fighter_aircraft
+
+=end
+
+
+
+### Class inheritance
+
+# Use < to indicates that subclass inherits property from superclass 
+# 
+# Remark: < is like the syntax as below:
+# subclass "extends" superclass in Java, 
+# subclass":"  superclass in C++,
+# subclass(superclass) in Python 
+
+
+=begin
+
+class Animal 
+    attr_accessor :name, :age
+
+    def say( content )
+        puts "Say: #{content}."
+    end
+
+end
+#End of definition of class Animal
+
+class Cat < Animal
+    
+    # method overriding
+    def say( content )
+        puts "Meow~~~ >//<"
+        super( content )
+    end
+
+end
+#End of definition of class Cat
+
+class Dog < Animal
+
+    # method overriding
+    def say( content , target )
+        puts "Bark at #{target} ~~~"
+        super( content )
+    end
+
+end
+#End of definition of class Dog
+
+class Cow < Animal
+
+    # method overriding
+    def say
+        puts "Moo...Moooooooo....."
+        super("Moo")
+    end
+
+end
+#End of definition of class Cow
+
+animal_1 = Animal.new
+cat_1 = Cat.new
+dog_1 = Dog.new
+cow_1 = Cow.new
+
+# expected output:
+# Say: say function of animal.
+# Meow~~~ >//<
+# Say: meow.
+# Bark at a car ~~~
+# Say: wolf.
+# Moo...Moooooooo.....
+# Say: Moo.
+
+animal_1.say("say function of animal")
+cat_1.say("meow")
+dog_1.say("wolf","a car")
+cow_1.say
+
+
+=end
+
+
+
+### Module
+
+# Module are somewhat similar to classes: they are things what hold methods, just like classes do.
+# However, modules can not be instantiated.
+# It's not possible to create objects from a module.
+# In addition, modules, unlike classes, therefore do not have a method new to create object(instance).
+
+# With the implementation of modules, we can share methods bryween classes: Modules can be included into classes,
+# and this makes their methods available on the class, just as if we'd copied and pasted these methods over the class definition.
+
+# It is useful if we have methods which we want to reuse again in other classes and avoid repetition.
+
+=begin
+
+module Debug_message
+
+    def who_am_i
+        puts "#{self.class.name}: #{self.inspect}"
+    end
+
+end
+#End of definition of module debug_message
+
+
+
+class Pilot
+    # include module "Debug_message"
+    include Debug_message
+
+    # We can run a piece of code in class
+    cheer = "We control the skies! <3"
+    
+    puts cheer
+
+    # Class Method for access control on attribute
+    # 1. attr_accessor for getter and setter
+    # 2. attr_reader for getter only
+    # 3. attr_writer for setter only
+    attr_reader :first_name, :last_name, :name
+
+    # Object Constructor
+    def initialize( firstName, lastName)
+        @fisrt_name = firstName
+        @last_name = lastName
+        @name = "#{firstName} #{lastName}".to_s
+
+        ObjectSpace.define_finalizer( self, finalize() )
+    end
+
+    # Object Method
+    def introduce
+        #introduction = "Hi everyone. My name is #{@fisrt_name} #{@last_name}."
+        introduction = "Hi everyone. My name is #{@name}."
+
+        puts introduction
+        puts "F-14 is reall cool!!!"
+
+        return
+    end
+
+    # Class object destructor
+    #def self.finalize()
+    def finalize( p = @name)
+        proc{
+            farewell = "(from #{p}) Hey I got to go for combat training. See you."
+            puts farewell
+            return
+        } 
+    end
+
+end
+#End of definition of class Pilot
+
+Pilot_3 = Pilot.new("Charlotte", "Blackwoord")
+
+# expected output:
+# Pilot: #<Pilot:0x2d779e8 @fisrt_name="Charlotte", @last_name="Blackwoord", @name="Charlotte Blackwoord">
+Pilot_3.who_am_i
+
+
+=end
+
+
+### Iterator
+
+# Iterators are  methods supported by collections. 
+# Objects that store a group of data members are called collections. 
+# In Ruby, arrays and hashes can be termed collections.
+
+# Iterators return all the elements of a collection
+
+array_pilot = ["Pete Mitchell", "Charlotte Blackwoord", "Nick Bradshaw", "Mike Metcalf", "Tom Kazansky"]
+
+
+# expected output:
+# Pete Mitchell is an ace pilot.
+# Charlotte Blackwoord is an ace pilot.
+# Nick Bradshaw is an ace pilot.
+# Mike Metcalf is an ace pilot.
+# Tom Kazansky is an ace pilot.
+
+array_pilot.each do | pilot |
+    puts "#{pilot} is an ace pilot."
+end
+
+
+# expected output: (hurray is picked randomly)
+# 1, Pete Mitchell : ["Let's given them an air show."]
+# 2, Charlotte Blackwoord : ["We control the skies."]
+# 3, Nick Bradshaw : ["I see 'em, radar tracking is ready."]
+# 4, Mike Metcalf : ["Laser guided missile is good to go."]
+# 5, Tom Kazansky : ["Roger taht."]
+
+
+array_hurray = ["Air Force here.", "We control the skies.", "I'm listening.", "Let's given them an air show.", "We're cruising.", "Got you covered.", "I see 'em, radar tracking is ready.", "Roger taht.", "This is our territory.", "Laser guided missile is good to go.", "On patrol."]
+
+# Advanced usage with both element and index
+array_pilot.each_with_index do | pilot, index |
+    
+    puts "# #{index+1}, #{pilot} : #{ array_hurray.sample(1) }"
+end
