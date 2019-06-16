@@ -71,3 +71,30 @@ function_obj_demo( lambda { puts "Embedding a lambda calculus."} )
 # Embedding a Proc(procedure).
 # Leave function object demo
 function_obj_demo( Proc.new { puts "Embedding a Proc(procedure)."} )
+
+
+
+
+
+
+def testFunction( &codeBlock )
+    puts "Enter test function."
+    codeBlock.call
+    puts "Leave test function."
+end
+
+
+
+# Enter test function.
+# passing code block to testFunction by do ... end.
+# Leave test function.
+testFunction do 
+    puts "passing code block to testFunction by do ... end."
+end
+
+
+
+# Enter test function.
+# passing code block to testFunction by curly braces.
+# Leave test function.
+testFunction{ puts "passing code block to testFunction by curly braces."}
